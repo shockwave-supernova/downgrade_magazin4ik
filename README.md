@@ -9,30 +9,26 @@ Developed by **Rachel**.
 * **Cyber-Noir Interface**: Includes a slow-printing COBOL-style terminal initialization for that "logged-in-to-the-mainframe" aesthetic.
 * **Adaptive Suffix Probe**: Automatically detects irregular filenames (e.g., `DowngradeN1a.pdf`, `DowngradeN5b.pdf`, `.PDF` vs `.pdf`) using iterative brute-force logic.
 * **Zero-Inference State Tracking**: Maintains a `dgmag_state.sys` file to remember the last intercepted issue, ensuring you never scan the same sector twice.
-* **SMTP Integration**: Optimized for secure relays (like **Autistici**) to send immediate alerts with high-fidelity logs.
+* **SMTP Integration**: Optimized for secure relays to send immediate alerts with high-fidelity logs.
 * **Bash Automation**: Generates a ready-to-use `curl` loop in the email body for one-command batch downloads of newly discovered issues.
 
 ## 🛠 Prerequisites
 
-* **OS**: Fedora Linux (Native Bash environment).
+* **OS**: Linux (Native Bash environment).
 * **Language**: Rust (Edition 2021).
 * **Dependencies**: `reqwest`, `lettre`, `dotenvy`, `regex`, `anyhow`.
 
 ## 🚀 Installation & Setup
 
 1.  **Clone the repository**:
-    ```bash
-    git clone [https://github.com/your-username/dgmag_checker.git](https://github.com/your-username/dgmag_checker.git)
-    cd dgmag_checker
-    ```
 
 2.  **Configure Environment**:
     Create a `.env` file in the root directory. 
     **Important**: If your SMTP password contains special characters (like `#`), you **must** wrap it in double quotes.
     ```env
     BASE_URL=[http://dgmag.in](http://dgmag.in)
-    EMAIL=your_email@cryptolab.net
-    SMTP_SERVER=smtp.autistici.org
+    EMAIL=your_email@mail.net
+    SMTP_SERVER=smtp.mail.org
     SMTP_PASSWORD="your_secure_password"
     STATE_FILE=dgmag_state.sys
     ```
@@ -45,7 +41,7 @@ Developed by **Rachel**.
 ## 📋 Usage
 
 ### Manual Execution
-To trigger a manual scan from your Fedora terminal:
+To trigger a manual scan from your terminal:
 ```bash
 cargo run
 ```

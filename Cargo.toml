@@ -1,0 +1,11 @@
+[package]
+name = "dgmag_checker"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "0.12", features = ["blocking"] }
+lettre = "0.11"
+anyhow = "1.0"
+dotenvy = "0.15"
+regex = "1.10" # <-- Добавили для поиска PDF
